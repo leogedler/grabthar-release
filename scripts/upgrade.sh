@@ -6,9 +6,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 $DIR/grabthar-validate-git;
 
 if [ -z "$1" ]; then
-    npx npm-check-updates --registry='http://registry.npmjs.org' --dep=prod --upgrade
+    npm update
 else
-    npx npm-check-updates --registry='http://registry.npmjs.org' --dep=prod --upgrade --filter="$1"
+    npm update "$1"
 fi;
 
 rm -rf ./node_modules;
